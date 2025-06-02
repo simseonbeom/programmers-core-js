@@ -117,14 +117,12 @@ console.clear();
 // 함수는 재사용성을 고려해야 합니다. (유연한 함수)
 // separation of concerns (관심사의 분리)
 
-// parameter
+// parameter 인자
 function getRandom(n){
   const value = Math.floor(Math.random() * n);
   return value;
 }
 
-
-getRandom(100)
 
 
 function getDay(value){
@@ -141,18 +139,36 @@ function getDay(value){
 }
 
 
+// getDay 함수를 가지고 
+// 주말인지 평일인지를 구분할 수 있는 함수를 만들어주세요. (weekend)
 
-const day = getDay(getRandom(7)) 
-
-console.log( day );
-
-
-
-
-// `오늘은 ${day}요일 입니다.`
+// weekend()  => 오늘은 토요일입니다. 그러므로 주말입니다.
+//               오늘은 화요일입니다. 그러므로 평일입니다.
 
 
 
+function weekend(){
+
+ // 요일 가져오기
+  const today = getDay(getRandom(7)) 
+
+  // if(today.includes('토') || today.includes('일')){
+  //   return `오늘은 ${today}요일 입니다. 그러므로 주말입니다.`
+  // }
+
+  // return `오늘은 ${today}요일 입니다. 그러므로 평일입니다.`
+ 
+  // 요일 조건 처리 => 주말/평일
+  
+
+  // const day = today.includes('토') || today.includes('일') ? 
+  return today.includes('토') || today.includes('일') ? 
+              `오늘은 ${today}요일입니다. 그러므로 주말입니다.`:
+              `오늘은 ${today}요일입니다. 그러므로 평일입니다.`
+
+  // return day;
+
+}
 
 
 
