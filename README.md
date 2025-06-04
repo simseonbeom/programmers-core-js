@@ -44,16 +44,16 @@
 ## Loop
 - [x] loop (while) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/10-1.loop.js)
 - [x] loop (do..while) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/10-2.loop.js)
-- [ ] loop (for) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/10-3.loop.js)
-- [ ] loop (for...in) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/10-4.loop.js)
-- [ ] loop (for...of) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/10-5.loop.js)
+- [x] loop (for) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/10-3.loop.js)
+- [x] loop (for...in) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/10-4.loop.js)
+- [x] loop (for...of) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/10-5.loop.js)
 
 
 
 ---
 - ## Function
-- [ ] function (함수선언문) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/11-1.function.js)
-- [ ] function (함수표현식) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/11-2.function.js)
+- [x] function (함수선언문) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/11-1.function.js)
+- [x] function (함수표현식) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/11-2.function.js)
 - [ ] function (화살표함수) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/11-3.function.js)
 - [ ] function (재귀함수) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/11-4.function.js)
 

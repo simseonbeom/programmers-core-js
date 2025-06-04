@@ -64,6 +64,26 @@ function next(node){
 
 }
 
+function prev(node){
+
+  // node가 문자면 아래 코드 실행해 
+  // validation => type guard
+  if(typeof node === 'string'){
+    node = document.querySelector(node)
+  }
+
+  do{
+    node = node.previousSibling;
+  }
+  while(node.nodeType !== 1)
+
+  return node
+
+}
+
+
+const _first = prev('.second')
+
 const second = next('.first')
 // const _second = next(first)
 
