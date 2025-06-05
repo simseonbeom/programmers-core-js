@@ -1,7 +1,18 @@
 
 
+html{
+
+}
+
+:root{
+  /* font-size: 13px; */
+}
 
 
 .first{
   background-color: red;
+  /* font-size: 2rem; */
+  /* width: 10rem; */
+  /* position: absolute; */
+  /* left: 5rem; */
 }
