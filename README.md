@@ -79,8 +79,8 @@
 
 ---
 ## Closure
-- [ ] Closure (클로저) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/14-1.closure.js)
-- [ ] Closure (시나리오) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/14-2.closure.js)
+- [x] Closure (클로저) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/14-1.closure.js)
+- [x] Closure (시나리오) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/14-2.closure.js)
 
 
 

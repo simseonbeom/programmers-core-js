@@ -19,7 +19,7 @@ const animal = {
     this.stomach.push(food);
   }
 }
-
+// animal.eat = ''
 
 const tiger = {
   pattern: '호랑이 무늬',

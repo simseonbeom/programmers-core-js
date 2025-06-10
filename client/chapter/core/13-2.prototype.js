@@ -21,6 +21,8 @@ class Animal {
     this.stomach = [];
   }
 
+
+  
   get eat(){
     return this.stomach;
   }
