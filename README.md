@@ -72,8 +72,8 @@
 - ---
 ## Prototype
 - [x] prototype (프로토타입의 상속) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/13-1.prototype.js)
-- [ ] prototype (클래스) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/13-2.classes.js)
-- [ ] prototype (클래스 TODO) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/13-3.classes.js)
+- [x] prototype (클래스) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/13-2.classes.js)
+- [x] prototype (클래스 TODO) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/13-3.classes.js)
 
 
 
