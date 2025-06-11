@@ -4,6 +4,10 @@ html{
 
 }
 
+span{
+  display: inline-block;
+}
+
 :root{
   /* font-size: 13px; */
 }
@@ -16,3 +20,46 @@ html{
   /* position: absolute; */
   /* left: 5rem; */
 }
+
+
+
+
+.space{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  div{
+    position: absolute;
+  }
+}
+
+
+
+.circle{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: dodgerblue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
