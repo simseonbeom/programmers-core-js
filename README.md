@@ -102,12 +102,10 @@
 - [x] ArrayMethod(array Method) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/20.arrayMethod.js)
 
 
-## iterator protocol
-- [ ] iterator(iterator object) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/21.iterator.js)
 
 
 ## 예외처리
-- [ ] Try..catch(예외처리) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/22.tryCatch.js)
+- [x] Try..catch(예외처리) [바로가기](https://github.com/simseonbeom/programmers-core-js/blob/01.core-javascript/client/chapter/core/20.tryCatch.js)
 
 
 
