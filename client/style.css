@@ -79,6 +79,21 @@ li[data-name="contact"]{
 
 
 
+section{
+  background-color: dodgerblue;
+  padding: 2rem;
+
+  article{
+    background-color: hotpink;
+    padding: 2rem;
+
+    p{
+      background-color: orange;
+      padding: 2rem;
+    }
+  }
+}
+
 
 
 

@@ -99,7 +99,7 @@ function throttle(f,limit = 1000){
 }
 
 
-
+// mousemove, resize, input event 
 
 
 
@@ -111,6 +111,10 @@ function throttle(f,limit = 1000){
 
 
 
+window.addEventListener('resize',debounce(()=>{
+  console.log('사이즈 계산!');
+  
+}))
 
 
 
