@@ -19,6 +19,7 @@
 // - 대·소문자를 구분하므로 `elem.nodeType`이 아닌, `elem.NoDeTyPe`는 동작하지 않습니다.
 // - DOM 프로퍼티는 HTML 속성과 달리 값이 항상 문자열이 아닙니다.
 
+// data-*
 
 /* DOM 프로퍼티 검토 ------------------------------------------------------- */
 
@@ -68,18 +69,13 @@ about.removeAttribute('class');
 // 7. about의 모든 속성을 나열해주세요.
 
 for(const a of about.attributes){
-  console.log( a );
-  
+  // console.log( a );
 }
 
 
 
-
-
-
-
-
-
+// attr('.first','class','hello')
+// attr('.first','class')
 
 
 
