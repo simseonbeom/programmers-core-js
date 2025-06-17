@@ -1,4 +1,5 @@
 import {
+  copy,
   shake,
   addClass,
   getRandom,
@@ -83,18 +84,16 @@ function handleCopyClipboard(){
   const text = this.textContent;
   
   
-  navigator.clipboard.writeText(text)
+  copy(text)
   .then(()=>{
-      showAlert({
-        target:'.alert-success',
-        className:'is-active',
-        message:'클립보드 복사 완료!!',
-        timeout:2000,
-      })
+    showAlert({
+      target:'.alert-success',
+      className:'is-active',
+      message:'클립보드 복사 완료!!',
+      timeout:2000,
+    })
   })
   
-
-
   
 }
 
