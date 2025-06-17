@@ -1,6 +1,3 @@
-
-
-
 /* 
 
 
@@ -24,68 +21,46 @@
 
 */
 
-
 // import { getNode } from "./lib/dom/getNode.js";
 // import { clearContents } from './lib/dom/clearContents.js'
 // import { insertLast } from './lib/dom/insert.js'
-import { getNode, insertLast, clearContents } from "./lib/dom/index.js";
-
+import { 
+    getNode, 
+    isString,
+    addClass,
+    typeError,
+    insertLast, 
+    clearContents,
+} from './lib/index.js';
 
 const first = getNode('#firstNumber');
 const second = getNode('#secondNumber');
 const result = getNode('.result');
 const clear = getNode('#clear');
 
-
-
-function handleInput(){
+function handleInput() {
   const firstValue = +first.value;
   const secondValue = Number(second.value);
   const total = firstValue + secondValue;
 
-
   // result.textContent = '';
-  clearContents(result)
+  clearContents(result);
 
-  insertLast(result,total);
-  
+  insertLast(result, total);
 }
 
-function handleClear(e){
+function handleClear(e) {
   e.preventDefault();
 
   // first.value = ''
   // second.value = ''
-  clearContents(first)
-  clearContents(second)
+  clearContents(first);
+  clearContents(second);
 
-  result.textContent = '-'
-  first.focus()
+  result.textContent = '-';
+  first.focus();
 }
 
-first.addEventListener('input',handleInput);
-second.addEventListener('input',handleInput);
-clear.addEventListener('click',handleClear);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+first.addEventListener('input', handleInput);
+second.addEventListener('input', handleInput);
+clear.addEventListener('click', handleClear);
