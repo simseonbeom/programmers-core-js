@@ -24,19 +24,30 @@
 // import { getNode } from "./lib/dom/getNode.js";
 // import { clearContents } from './lib/dom/clearContents.js'
 // import { insertLast } from './lib/dom/insert.js'
+
+/* 
+    named export          =>     import { getNode } from '../....js'
+    default export        =>     import clearContents from '../...js'
+*/
+
 import { 
-    getNode, 
+    getNode as $, 
     isString,
     addClass,
     typeError,
     insertLast, 
-    clearContents,
+    clearContents
 } from './lib/index.js';
 
-const first = getNode('#firstNumber');
-const second = getNode('#secondNumber');
-const result = getNode('.result');
-const clear = getNode('#clear');
+
+
+// import clearContents from "./lib/dom/clearContents.js";
+
+
+const first = $('#firstNumber');
+const second = $('#secondNumber');
+const result = $('.result');
+const clear = $('#clear');
 
 function handleInput() {
   const firstValue = +first.value;
@@ -64,3 +75,9 @@ function handleClear(e) {
 first.addEventListener('input', handleInput);
 second.addEventListener('input', handleInput);
 clear.addEventListener('click', handleClear);
+
+
+
+
+
+

@@ -1,7 +1,7 @@
 import { getNode } from "./getNode.js";
 import { isString } from "../utils/type.js";
 
-export function clearContents(node){
+export default function clearContents(node){
   
   if(isString(node)) node = getNode(node);
 
