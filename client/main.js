@@ -1,8 +1,6 @@
 
 
 
-
-
 /* 
 
 
@@ -25,6 +23,13 @@
 
 
 */
+
+
+// import { getNode } from "./lib/dom/getNode.js";
+// import { clearContents } from './lib/dom/clearContents.js'
+// import { insertLast } from './lib/dom/insert.js'
+import { getNode, insertLast, clearContents } from "./lib/dom/index.js";
+
 
 const first = getNode('#firstNumber');
 const second = getNode('#secondNumber');
