@@ -68,12 +68,12 @@ const obj = {
   email:'tiger@gmail.com'
 }
 
-xhr({
-  method:'DELETE',
-  url:`${END_POINT}/4`,
-  success: (data)=> console.log(data),
-  fail: ({message})=> console.log(message),
-})
+// xhr({
+//   method:'DELETE',
+//   url:`${END_POINT}/4`,
+//   success: (data)=> console.log(data),
+//   fail: ({message})=> console.log(message),
+// })
 
 
 // compound pattern
