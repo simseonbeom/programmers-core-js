@@ -1,4 +1,5 @@
 import { getNode } from '../dom/getNode.js';
+import { isObject, isNumber } from './type.js'
 
 // callback
 
@@ -38,30 +39,64 @@ Promise를 사용하는 이유?
 
 */
 
+// object mixin
 
-function delayP(shouldRejected = false, timeout = 1000){
+const defaultOptions = {
+  timeout:1000,
+  shouldRejected:false,
+  data:'success',
+  errorMessage:'warn'
+}
 
+function delayP(time,options){
+
+  // const config = {...defaultOptions,...options};
+  let config = {...defaultOptions}
+
+  // options이 숫자일 때 isNumber()
+  if(isNumber(options)){
+    config.timeout = options;
+  }
+
+  // options이 객체일 때 isObject()
+  if(isObject(options)){
+    config = {...defaultOptions,...options};
+  }
+
+  const {shouldRejected, timeout, data, errorMessage:err} = config;
+  
   return new Promise((resolve,reject) => {
 
     setTimeout(() => {
       
       if(!shouldRejected){
-        resolve('성공!');
+        resolve({name:'aa',age:40});
       }else{
-        reject({message:'오류 발생!'});
+        reject({message:err});
       }
     }, timeout);
   })
 }
 
+delayP({
+  data:'....'
+})
+
+
+
+// const data = delayP();
+
+
 delayP()
 .then(()=>{
-  
+    
   first.style.top = '-100px';
   second.style.top = '100px';
   
   return delayP()
 })
+
+
 
 .then((res)=>{
   
@@ -76,7 +111,6 @@ delayP()
   second.style.top = 0;
   
 })
-
 
 
 
