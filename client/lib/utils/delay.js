@@ -50,14 +50,17 @@ const defaultOptions = {
   errorMessage:'warn'
 }
 
-function delayP(time,options){
+
+export function delayP(options){
 
   // const config = {...defaultOptions,...options};
   let config = {...defaultOptions}
-
+  
   // options이 숫자일 때 isNumber()
   if(isNumber(options)){
+    
     config.timeout = options;
+    
   }
 
   // options이 객체일 때 isObject()
@@ -70,6 +73,8 @@ function delayP(time,options){
   
   return new Promise((resolve,reject) => {
 
+    console.log( timeout );
+    
     setTimeout(() => {
       
       if(!shouldRejected){
