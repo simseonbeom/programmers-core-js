@@ -4,7 +4,10 @@ import {
   getNode, 
   END_POINT, 
   insertLast, 
-  renderUserCard
+  changeColor, 
+  renderSpinner,
+  renderUserCard,
+  renderEmptyCard, 
  } from './lib/index.js';
 
 /* 
@@ -18,19 +21,91 @@ import {
 const userCardInner = getNode('.user-card-inner');
 
 async function renderUserList() {
+
+
+  renderSpinner(userCardInner);
+
+  // await delayP(2000)
+
   try {
     const { data } = await tiger.get(END_POINT);
     
-    await delayP(2000)
+    // getNode('.loadingSpinner').remove();
 
-    data.forEach((user) => renderUserCard(userCardInner,user));
+    gsap.to('.loadingSpinner',{
+      opacity:0,
+      duration:1,
+      onComplete(){
+        
+        this._targets[0].remove();
+        data.forEach((user) => renderUserCard(userCardInner,user));
+        changeColor('.user-card');
+
+        gsap.from('.user-card',{
+          opacity:0,
+          stagger:0.1,
+          x:-30
+        })
+
+      }
+    })
+
 
   } catch {
-    console.error('error!');
+
+    gsap.to('.loadingSpinner',{
+      opacity:0,
+      duration:1,
+      onComplete(){
+        
+        this._targets[0].remove();
+        renderEmptyCard(userCardInner)
+
+      }
+    })
   }
 }
 
 renderUserList();
+
+
+
+
+
+function handleDelete(e){
+
+  const button = e.target.closest('button');
+
+  if(!button) return;
+
+  const id = button.dataset.value
+
+  tiger.delete(`${END_POINT}/${id}`)
+
+
+  
+}
+
+
+userCardInner.addEventListener('click',handleDelete)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
