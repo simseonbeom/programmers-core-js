@@ -84,33 +84,66 @@ delayP({
 
 
 
-// const data = delayP();
+const data = delayP();
+
+const b = data.then((res)=>{
+  return res
+})
 
 
-delayP()
-.then(()=>{
+
+
+
+// delayP()
+// .then(()=>{
     
-  first.style.top = '-100px';
-  second.style.top = '100px';
+//   first.style.top = '-100px';
+//   second.style.top = '100px';
   
-  return delayP()
-})
+//   return delayP()
+// })
 
 
 
-.then((res)=>{
+// .then((res)=>{
   
-  first.style.transform = 'rotate(360deg)';
-  second.style.transform = 'rotate(-360deg)';
+//   first.style.transform = 'rotate(360deg)';
+//   second.style.transform = 'rotate(-360deg)';
 
-  return delayP();
-})
-.then(()=>{
+//   return delayP();
+// })
+// .then(()=>{
 
-  first.style.top = 0;
-  second.style.top = 0;
+//   first.style.top = 0;
+//   second.style.top = 0;
   
-})
+// })
+
+
+
+
+// const p = new Promise((성공,실패)=>{
+//   if(1){
+//     성공({name:'tiger'})
+//   }else{
+//     실패('실패!')
+//   }
+// })
+
+// const c = p.then((res)=> res );
+
+
+// c.then((res)=>{
+//   console.log( res );
+  
+// })
+
+// console.log( b );
+
+
+
+
+
 
 
 
