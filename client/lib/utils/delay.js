@@ -1,5 +1,7 @@
 import { getNode } from '../dom/getNode.js';
 import { isObject, isNumber } from './type.js'
+import { xhrPromise } from './xhr.js'
+import { insertLast } from '../dom/insert.js'
 
 // callback
 
@@ -65,32 +67,19 @@ function delayP(time,options){
 
   const {shouldRejected, timeout, data, errorMessage:err} = config;
   
+  
   return new Promise((resolve,reject) => {
 
     setTimeout(() => {
       
       if(!shouldRejected){
-        resolve({name:'aa',age:40});
+        resolve(data);
       }else{
         reject({message:err});
       }
     }, timeout);
   })
 }
-
-delayP({
-  data:'....'
-})
-
-
-
-const data = delayP();
-
-const b = data.then((res)=>{
-  return res
-})
-
-
 
 
 
@@ -139,6 +128,96 @@ const b = data.then((res)=>{
 // })
 
 // console.log( b );
+
+
+
+// async await
+
+// async : 무 조 건 promise object를 리턴하는 함수
+// await : 코드 실행 흐름 제어
+//         result의 값을 꺼낼 수 있다.
+
+async function f(){
+  return 10;
+}
+
+
+// IIAFE
+(async()=>{
+
+  const a = await f();
+
+})()
+
+
+
+
+
+function delayA(){
+  
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('성공')
+    }, 2000);
+  })
+
+}
+
+// const result = await delayA();
+
+// console.log(result);
+
+
+
+
+async function 라면끓이기(){
+
+  const a = await delayP({data:'물'})
+  console.log(a);
+  
+  const b = await delayP({data:'불켜기'})
+  console.log(b);
+
+  const c = await delayP({data:'스프'})
+  console.log(c);
+
+  
+  console.log('면');
+  console.log('계란');
+  console.log('먹기');
+}
+
+
+// 라면끓이기()
+
+
+
+async function getData(){
+  const data = await xhrPromise.get('https://pokeapi.co/api/v2/pokemon/15');
+
+  const src = data.sprites.other.showdown['front_default'];
+
+  insertLast(document.body,`<img src="${src}" alt="" />`)
+  
+}
+
+getData();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
