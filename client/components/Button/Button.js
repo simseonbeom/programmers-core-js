@@ -1,72 +1,74 @@
 
 
 
-class MyElement extends HTMLElement {
-  
-  count = 0;
+
+
+class Button extends HTMLElement {
 
   constructor(){
     super();
+    this.attachShadow({mode:'open'});
 
-  }
-
-  connectedCallback(){
-    console.log('mount');
+    this.state = {
+      active: this.getAttribute('active') || false
+    }
+    
     this.render();
-    this.attachEvent();
-  } 
-  
-  disconnectedCallback(){
-    console.log('unmount');
+
+    this.button = this.shadowRoot.querySelector('button');
+
+    
   }
 
   static get observedAttributes(){
-
-    return ['data-value']
+    
+    return ['active'];
   }
 
   attributeChangedCallback(name, oldValue, newValue){
-    if(name === 'data-value'){
+    if(name === 'active'){
+      this.state.active = newValue === 'true';
       this.render();
     }
-
-    console.log( name, oldValue, newValue );
   }
-
 
   handleClick(){
-    console.log('clicked');
-    this.dataset.value = ++this.count;
+    
+    const newActiveState = !this.state.active;
+    this.setAttribute('active',newActiveState);
     
   }
 
-
-  attachEvent(){
-    this.addEventListener('click',this.handleClick)
-  }
+  // attachEvent(){
+  //   this.button.addEventListener('click',this.handleClick);
+  // }
 
   render(){
-    console.log();
-    this.innerHTML = ++this.count;
+    const {active} = this.state;
     
+    this.shadowRoot.innerHTML = `
+      <style>
+        button {
+          background-color: ${active ? 'orange' : 'hotpink'}
+        }
+      </style>
+      <button 
+        type="button"
+        aria-label="${active ? '활성화' : '비활성화'}"
+        aria-pressed="${active}"
+      >
+        ${ active ? '🥸' : '❌' }
+      </button>
+    `
+
+    this.shadowRoot.querySelector('button').addEventListener('click',this.handleClick.bind(this))
+   
   }
-  
 
 }
 
 
-// 브라우저에게 알려주는 시점
-customElements.define('my-element',MyElement);
-
-
-
-// const element = document.createElement('my-element');
-// document.body.append(element)
-
-
-
-
-
+customElements.define('my-button',Button);
 
 
 
