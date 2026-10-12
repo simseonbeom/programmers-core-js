@@ -56,9 +56,9 @@ let calculateTotal = function (){
 
   console.log( arr );
   
-  // return arr.reduce(function(acc,current,index){
-  //    return acc + current
-  // },0)
+  return arr.reduce(function(acc,current,index){
+     return acc + current
+  },0)
 
 
 

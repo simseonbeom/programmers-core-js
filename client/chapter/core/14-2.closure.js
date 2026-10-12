@@ -133,3 +133,36 @@ const [value,setValue] = useState('hello');
 
 
 
+let state;
+
+function _useState(init) {
+  state ??= init;
+
+  const setState = (newValue) => {
+    state = newValue;
+    render();
+  };
+
+  return [state, setState];
+}
+
+function App() {
+  const [value, setValue] = _useState('hello');
+
+  console.log('현재 값:', value);
+
+  return {
+    setValue,
+  };
+}
+
+let app;
+
+function render() {
+  app = App();
+}
+
+render();
+
+app.setValue('bye');
+app.setValue('hello again');

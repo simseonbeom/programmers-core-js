@@ -101,6 +101,7 @@ Tiger.bark = function (sound){
 
 
 
+
 function sum(a,b){
   console.log( this );
   return a + b;

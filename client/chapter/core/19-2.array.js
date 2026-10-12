@@ -272,7 +272,20 @@ const _filter = (f,i) => {
 const product = _filter(item => item.price < 15000, products);
 
 
+function reduce(arr, f, initialValue) {
+  let acc = initialValue;
 
+  for (const [index, currentValue] of arr.entries()) {
+    acc = f( acc, currentValue, index, arr );
+  }
+
+  return acc;
+}
+
+const result1 = reduce(product, (acc, cur) => acc + cur.price, 0);
+
+// 초기값 없음
+const result2 = reduce(product, (acc, cur) => acc + cur.price);
 
 
 // _reduce(
@@ -305,6 +318,86 @@ const product = _filter(item => item.price < 15000, products);
 
 
 
+// 첫 번째는 어떻게 순회하고 계산할 것인지 작성하고, 두 번째는 어떤 변환을 어떤 순서로 수행할 것인지 표현합니다.
+
+
+
+const curry = (f) => (a, ...args) => 
+  args.length ? f(a, ...args) : (...rest) => f(a,...rest);
+
+const curryN = (f, arity = f.length) => {
+  const curried = (...args) =>
+    args.length >= arity
+      ? f(...args)
+      : (...rest) => curried(...args, ...rest);
+
+  return curried;
+};
+
+const _forEach = curry((f,iterable)=>{
+  for(const item of iterable) f(item);
+})
+
+const _map = curry((f, iterable) => {
+  const result = [];
+  for (const item of iterable) result.push(f(item));
+  return result;
+});
+
+const _filter = curry((f, iterable) => {
+  const result = [];
+  for (const item of iterable) {
+    if (f(item)) result.push(item);
+  }
+  return result;
+});
+
+
+const _reduce = curryN((f, initialValue, iterable) => {
+  let acc = initialValue;
+
+  for (const item of iterable) {
+    acc = f(acc, item);
+  }
+
+  return acc;
+});
+
+const flat = (iterable) => {
+  const result = [];
+  for (const item of iterable) {
+    if (Array.isArray(item)) {
+      for (const value of item) result.push(value);
+    } else {
+      result.push(item);
+    }
+  }
+  return result;
+};
+
+const flatMap = curry((f, iterable) => flat(map(f, iterable)));
+
+const go = (value, ...functions) => {
+  for (const f of functions) value = f(value);
+  return value;
+};
+
+const pipe = (f, ...functions) =>
+  (...args) => go(f(...args), ...functions);
+
+
+const add = (a, b) => a + b;
+const log = console.log;
+
+console.clear();
+
+go(
+  product,
+  _filter(p => p.price >= 13000),
+  _map(p => p.price),
+  _reduce(add, 0),
+  log
+);
 
 
 

@@ -49,6 +49,7 @@ class Todo {
   set currentInputTodoData (value){
     this.input.value = value;
   }
+  
 
   addTodoData(){
     if (this.currentInputTodoData === '') return;

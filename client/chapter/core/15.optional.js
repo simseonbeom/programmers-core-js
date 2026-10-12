@@ -91,27 +91,27 @@ let any;
 
 let count = 0;
 
-// const _timeout = setInterval(() => {
+const _timeout = setInterval(() => {
 
-//   const second = document.querySelector('.second');
+  const second = document.querySelector('.second');
 
-//   second.style.transform = `translateY(${++count}px) rotate(-${count}deg)`
-//   if(count >= 500){
-//     // clearInterval(_timeout)
-//     clearTimeout(_timeout)
-//   }
+  second.style.transform = `translateY(${++count}px) rotate(-${count}deg)`
+  if(count >= 500){
+    // clearInterval(_timeout)
+    clearTimeout(_timeout)
+  }
 
-// }, 10);
+}, 10);
 
 
 let _count = 0;
 
 function animation(){
   
-  const first = document.querySelector('.first')
+  const first = document.querySelector('.first');
   first.style.transform = `translateY(${++_count}px)rotate(${_count}deg)`
 
-  const id = requestAnimationFrame(animation)
+  const id = requestAnimationFrame(animation);
 
   if(_count >= 500){
     cancelAnimationFrame(id)
@@ -131,7 +131,7 @@ function animation(){
 
 
 
-
+// https://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D
 
 
 
